@@ -1,0 +1,79 @@
+@mixin font($f-name, $f-style, $f-weight, $f-url)
+	@font-face
+	    font-family: $f-name
+	    font-style: $f-style
+	    font-weight: $f-weight
+	    src: url($f-url) format('woff2')
+
+@include font("GolosType", normal, 500, "../fonts/Golos_Regular.woff2")
+@include font("GolosType", normal, 600, "../fonts/Golos_Medium.woff2")
+@include font("GolosType", normal, 700, "../fonts/Golos_DemiBold.woff2")
+@include font("GolosType", normal, 800, "../fonts/Golos_Bold.woff2")
+@include font("GolosType", normal, 900, "../fonts/Golos_Black.woff2")
+
+$font: GolosType, Arial, Helvetica, sans-serif
+$text: #232931
+$accent: #2A77F6
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $font
+	font-weight: 500
+	overflow-x: hidden
+	color: $text
+	height: 100%
+
+a
+	color: $text
+	text-decoration: none
+	transition: all 0.3 ease-in-out
+	&:hover
+		text-decoration: none
+		color: $accent
+
+.wrapper
+	max-width: 1200px
+	min-width: 320px
+	margin: 0 auto
+	padding: 10px
+
+
+.main
+	display: flex
+	//height: 80vh
+	margin: 30px 0px
+	//align-items: flex-end
+	&__text
+		width: 50%
+		padding: 0px 10px
+		@media screen and (max-width: 720px)
+			width: 100%	
+		h1
+			font-size: 70px
+			line-height: 76px
+			text-transform: uppercase
+			margin: 20px 0px
+		p
+			font-size: 18px
+			line-height: 24px
+	&__img
+		width: 50%	
+		& .gatsby-image-wrapper
+			border-radius: 10px

@@ -1,0 +1,35 @@
+@import 'layout.sass'
+
+nav
+    display: flex
+    justify-content: space-between 
+    margin-top: 20px
+    font-size: 16px
+    @media screen and (max-width: 600px)
+        flex-direction: column
+
+.logo
+    @media screen and (max-width: 600px)
+        margin-bottom: 20px
+        font-size: 20px
+
+.menu
+
+    &__item 
+        padding: 7px 12px
+        background: #F2F4F6
+        border-radius: 5px
+        margin-right: 5px
+        transition: all 0.3s ease-in-out
+        &:hover
+            background: $accent
+            color: #fff
+
+
+.active 
+    background: $accent
+    color: #fff
+
+.last_post_link
+    margin: 0px 5px
+    color: lighten($text, 0.1)
